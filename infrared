@@ -1,0 +1,26 @@
+int LED=13;
+int IR=8;
+int count=0;
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED,OUTPUT);
+  pinMode(IR,INPUT);
+
+}
+
+void loop() {
+ 
+  int val=digitalRead(IR);
+  if(val==1){
+   digitalWrite(LED,LOW);
+  Serial.println("Not detected");}
+  else{
+    digitalWrite(LED,HIGH);
+    Serial.println("Detected");
+    count++;
+     Serial.println(count);
+    }
+   
+   delay(500);
+
+}
